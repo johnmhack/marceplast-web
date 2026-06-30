@@ -1,0 +1,114 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Marceplast - Inyección de plástico industrial de alta calidad.' } = Astro.props;
+const navItems = [
+  { href: '/', label: 'Inicio' },
+  { href: '/quienes-somos', label: 'Quiénes Somos' },
+  { href: '/inyeccion-productos-plastico', label: 'Inyección' },
+  { href: '/diseno-moldes-inyeccion', label: 'Moldes de Inyección' },
+  { href: '/contactanos', label: 'Contacto' },
+];
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/img/isologo_marceplast.svg" />
+  <title>{title} | Marceplast</title>
+</head>
+<body class="font-sans text-slate-800 bg-fondo">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <nav class="w-full flex items-center justify-between px-32 py-4">
+      <a href="/" class="flex items-center">
+  <img src="/img/logo_marceplast.svg" alt="Marceplast" class="h-20 w-auto" />
+</a>
+
+      <ul class="hidden md:flex gap-12 font-medium" id="nav-links-desktop">
+        {navItems.map(item => (
+          <li>
+            <a
+              href={item.href}
+              class={`transition-colors hover:text-primario ${currentPath === item.href ? 'text-primario font-semibold' : 'text-slate-700'}`}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <button id="nav-toggle" aria-label="Abrir menú" class="md:hidden flex flex-col gap-1.5">
+        <span class="w-7 h-0.5 bg-primario rounded"></span>
+        <span class="w-7 h-0.5 bg-primario rounded"></span>
+        <span class="w-7 h-0.5 bg-primario rounded"></span>
+      </button>
+    </nav>
+
+    <!-- Menú mobile -->
+    <ul id="nav-links-mobile" class="hidden md:hidden flex-col items-center gap-5 py-6 bg-white border-t border-slate-200">
+      {navItems.map(item => (
+        <li>
+          <a href={item.href} class={`text-lg ${currentPath === item.href ? 'text-primario font-semibold' : 'text-slate-700'}`}>
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-primario-oscuro text-white pt-14 pb-6 px-5">
+    <div class="max-w-6xl mx-auto grid sm:grid-cols-3 gap-10 mb-10">
+      <div>
+        <h4 class="text-primario-claro font-semibold mb-3">Marceplast</h4>
+        <p class="opacity-90 text-sm leading-relaxed">
+          Empresa especializada en inyección de plástico, con productos de alta calidad para la industria.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-primario-claro font-semibold mb-3">Enlaces</h4>
+        <ul class="space-y-2 text-sm opacity-90">
+          {navItems.map(item => (
+            <li><a href={item.href} class="hover:opacity-100 hover:underline">{item.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-primario-claro font-semibold mb-3">Contacto</h4>
+        <ul class="space-y-2 text-sm opacity-90">
+          <li>Tel: (000) 000-0000</li>
+          <li>Email: contacto@marceplast.com</li>
+          <li>Dirección: Ciudad, País</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto border-t border-white/15 pt-5 text-center text-sm opacity-80">
+      &copy; 2026 Marceplast. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('nav-links-mobile');
+    toggle?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+      mobileMenu?.classList.toggle('flex');
+    });
+  </script>
+</body>
+</html>

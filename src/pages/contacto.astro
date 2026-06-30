@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contacto">
+
+  <section class="relative overflow-hidden bg-hero-gradient text-white py-28 px-5 text-center">
+    <div data-anim="hero-bg" class="absolute inset-0 bg-hero-gradient opacity-90 -z-10"></div>
+    <h1 data-anim="hero-title" class="text-4xl font-bold mb-4">Contáctanos</h1>
+    <p data-anim="hero-text" class="text-lg opacity-95 max-w-xl mx-auto">
+      ¿Tienes un proyecto en mente? Escríbenos y te responderemos a la brevedad.
+    </p>
+  </section>
+
+  <section class="py-24 px-5" data-anim="section-pin">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-3xl font-bold text-primario text-center mb-3" data-anim="reveal">
+        Envíanos un Mensaje
+      </h2>
+      <p class="text-slate-500 text-center mb-10" data-anim="reveal">
+        Este formulario funciona automáticamente al desplegar en Netlify (Netlify Forms),
+        sin necesidad de backend propio.
+      </p>
+
+      <!--
+        IMPORTANTE PARA NETLIFY FORMS:
+        - data-netlify="true" activa la captura del formulario en el panel de Netlify.
+        - name="contacto" es el identificador del formulario.
+        - El input hidden "form-name" es requerido por Netlify.
+      -->
+      <form
+        data-anim="reveal"
+        class="flex flex-col gap-5"
+        name="contacto"
+        method="POST"
+        data-netlify="true"
+      >
+        <input type="hidden" name="form-name" value="contacto" />
+
+        <input
+          type="text"
+          name="nombre"
+          placeholder="Nombre completo"
+          required
+          class="px-4 py-3.5 border border-slate-200 rounded-lg focus:outline-none focus:border-primario"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Correo electrónico"
+          required
+          class="px-4 py-3.5 border border-slate-200 rounded-lg focus:outline-none focus:border-primario"
+        />
+        <input
+          type="tel"
+          name="telefono"
+          placeholder="Teléfono (opcional)"
+          class="px-4 py-3.5 border border-slate-200 rounded-lg focus:outline-none focus:border-primario"
+        />
+        <textarea
+          name="mensaje"
+          rows="5"
+          placeholder="Cuéntanos sobre tu proyecto..."
+          required
+          class="px-4 py-3.5 border border-slate-200 rounded-lg focus:outline-none focus:border-primario"
+        ></textarea>
+
+        <button
+          type="submit"
+          class="bg-primario hover:bg-primario-oscuro transition-colors text-white px-8 py-4 rounded-lg font-semibold"
+        >
+          Enviar Mensaje
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <section class="py-24 px-5 bg-fondo-alterno" data-anim="section-pin">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primario text-center mb-12" data-anim="reveal">
+        Información de Contacto
+      </h2>
+      <div data-anim="stagger-group" class="grid sm:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm text-center">
+          <h3 class="text-primario font-semibold mb-2">Teléfono</h3>
+          <p class="text-slate-500 text-sm">(000) 000-0000</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm text-center">
+          <h3 class="text-primario font-semibold mb-2">Email</h3>
+          <p class="text-slate-500 text-sm">contacto@marceplast.com</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm text-center">
+          <h3 class="text-primario font-semibold mb-2">Dirección</h3>
+          <p class="text-slate-500 text-sm">Ciudad, País</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { initAnimations } from '../scripts/animations.js';
+    initAnimations();
+  </script>
+</Layout>

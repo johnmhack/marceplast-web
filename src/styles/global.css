@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Evita parpadeo de scroll-bar al animar con GSAP/ScrollTrigger */
+body {
+  overflow-x: hidden;
+}
+
+/* Clase de utilidad para elementos que GSAP va a animar:
+   empiezan invisibles para que no haya "flash" antes de que
+   corra el script */
+.gsap-reveal {
+  opacity: 0;
+}

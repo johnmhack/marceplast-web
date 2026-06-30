@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+
+const productosDestacados = [
+  { img: '/img/producto-1.jpg', title: 'Producto 1', description: 'Descripción breve del producto y sus usos principales.' },
+  { img: '/img/producto-2.jpg', title: 'Producto 2', description: 'Descripción breve del producto y sus usos principales.' },
+  { img: '/img/producto-3.jpg', title: 'Producto 3', description: 'Descripción breve del producto y sus usos principales.' },
+];
+---
+
+<Layout title="Inicio">
+
+  <!-- HERO con parallax de fondo -->
+  <section class="relative overflow-hidden bg-hero-gradient text-white py-32 px-5 text-center">
+    <div
+      data-anim="hero-bg"
+      class="absolute inset-0 bg-hero-gradient opacity-90 -z-10"
+    ></div>
+
+    <h1 data-anim="hero-title" class="text-4xl md:text-5xl font-bold mb-5">
+      Soluciones en Inyección de Plástico
+    </h1>
+    <p data-anim="hero-text" class="text-lg max-w-2xl mx-auto mb-8 opacity-95">
+      Marceplast transforma ideas en productos plásticos de alta calidad, con tecnología
+      de inyección y procesos eficientes para la industria.
+    </p>
+    <a
+      data-anim="hero-btn"
+      href="/productos"
+      class="inline-block bg-primario-claro hover:bg-primario-oscuro transition-colors px-8 py-4 rounded-lg font-semibold"
+    >
+      Ver Productos
+    </a>
+  </section>
+
+  <!-- QUIÉNES SOMOS -->
+  <section data-anim="section-pin" class="py-24 px-5">
+    <div class="max-w-3xl mx-auto text-center" data-anim="reveal">
+      <h2 class="text-3xl font-bold text-primario mb-4">¿Quiénes Somos?</h2>
+      <p class="text-slate-500 mb-8">
+        Somos una empresa dedicada a la inyección de plástico, comprometida con la calidad,
+        la innovación y la satisfacción de nuestros clientes en cada proyecto.
+      </p>
+      <a href="/nosotros" class="inline-block border-2 border-primario text-primario hover:bg-primario hover:text-white transition-colors px-7 py-3 rounded-lg font-semibold">
+        Conócenos
+      </a>
+    </div>
+  </section>
+
+  <!-- VIDEO con reveal -->
+  <section class="py-24 px-5 bg-fondo-alterno" data-anim="section-pin">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-primario mb-3" data-anim="reveal">Nuestro Proceso</h2>
+      <p class="text-slate-500 mb-10" data-anim="reveal">
+        Conoce cómo trabajamos y la tecnología detrás de cada producto.
+      </p>
+      <div data-anim="reveal" class="rounded-xl overflow-hidden shadow-2xl">
+        <video controls poster="/img/poster-video.jpg" class="w-full">
+          <source src="/video/proceso-marceplast.mp4" type="video/mp4" />
+          Tu navegador no soporta el elemento de video.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS DESTACADOS con stagger -->
+  <section class="py-24 px-5">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primario text-center mb-3" data-anim="reveal">
+        Productos Destacados
+      </h2>
+      <p class="text-slate-500 text-center max-w-xl mx-auto mb-12" data-anim="reveal">
+        Una muestra de lo que fabricamos para distintas industrias.
+      </p>
+      <div data-anim="stagger-group" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {productosDestacados.map((p) => (
+          <ProductCard img={p.img} title={p.title} description={p.description} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { initAnimations } from '../scripts/animations.js';
+    initAnimations();
+  </script>
+</Layout>
