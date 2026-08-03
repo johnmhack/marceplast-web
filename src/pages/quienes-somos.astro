@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Quiénes Somos">
+
+  <section class="relative overflow-hidden bg-hero-gradient text-white py-28 px-5 text-center">
+    <div data-anim="hero-bg" class="absolute inset-0 bg-hero-gradient opacity-90 -z-10"></div>
+    <h1 data-anim="hero-title" class="text-4xl font-bold mb-4">Quiénes Somos</h1>
+    <p data-anim="hero-text" class="text-lg opacity-95 max-w-xl mx-auto">
+      Más de 15 años de experiencia en moldes e inyección de plásticos.
+    </p>
+  </section>
+
+  <section class="py-24 px-5" data-anim="section-pin">
+    <div class="max-w-3xl mx-auto text-center" data-anim="reveal">
+      <h2 class="text-3xl font-bold text-primario mb-4">Quiénes Somos</h2>
+      <p class="text-slate-500 mb-4">
+        Con más de 15 años de experiencia, somos una empresa especializada en el
+        diseño y fabricación de moldes para inyección, así como en la producción de
+        productos plásticos de alta calidad para los sectores promocional, industrial y del
+        hogar. Contamos con tecnología de última generación y un equipo altamente
+        calificado que nos permite desarrollar soluciones innovadoras, eficientes y
+        confiables, adaptadas a las necesidades de cada cliente.
+      </p>
+      <p class="text-slate-500">
+        Nuestro compromiso con la calidad, la innovación, la precisión y el cumplimiento
+        nos ha consolidado como un aliado estratégico, ofreciendo productos y procesos
+        que cumplen con los más altos estándares de excelencia.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24 px-5 bg-fondo-alterno" data-anim="section-pin">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primario text-center mb-12" data-anim="reveal">
+        Misión, Visión y Valores
+      </h2>
+      <div data-anim="stagger-group" class="grid sm:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+          <h3 class="text-primario font-semibold mb-2">Misión</h3>
+          <p class="text-slate-500 text-sm">
+            Brindar soluciones integrales en el diseño y fabricación de moldes para inyección,
+            así como en la producción de productos plásticos de alta calidad para los sectores
+            promocional, industrial y del hogar. Nos enfocamos en satisfacer las necesidades
+            de nuestros clientes mediante procesos eficientes, tecnología de última
+            generación y un equipo comprometido con la calidad, la innovación y el
+            cumplimiento.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+          <h3 class="text-primario font-semibold mb-2">Visión</h3>
+          <p class="text-slate-500 text-sm">
+            Ser una empresa líder y referente en la industria de la inyección de plásticos y
+            fabricación de moldes, reconocida por la innovación, la excelencia en nuestros
+            procesos y la confianza que generamos en nuestros clientes. Para el año 2030,
+            buscamos fortalecer nuestra presencia en el mercado nacional e internacional,
+            incorporando nuevas tecnologías y consolidándonos como un aliado estratégico
+            para el desarrollo de soluciones plásticas de alto valor.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+          <h3 class="text-primario font-semibold mb-2">Valores</h3>
+          <p class="text-slate-500 text-sm">
+            Calidad, innovación, precisión y cumplimiento.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-5" data-anim="section-pin">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primario text-center mb-3" data-anim="reveal">
+        Nuestras Instalaciones
+      </h2>
+      <p class="text-slate-500 text-center mb-12" data-anim="reveal">
+        Conoce un poco de nuestra planta y equipo de trabajo.
+      </p>
+      <div data-anim="stagger-group" class="grid sm:grid-cols-3 gap-8">
+        <div class="rounded-xl overflow-hidden h-56">
+          <img data-anim="parallax-img" src="/img/planta-1.jpg" alt="Planta de producción" class="w-full h-full object-cover" />
+        </div>
+        <div class="rounded-xl overflow-hidden h-56">
+          <img data-anim="parallax-img" src="/img/planta-2.jpg" alt="Maquinaria de inyección" class="w-full h-full object-cover" />
+        </div>
+        <div class="rounded-xl overflow-hidden h-56">
+          <img data-anim="parallax-img" src="/img/planta-3.jpg" alt="Equipo de trabajo" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { initAnimations } from '../scripts/animations.js';
+    initAnimations();
+  </script>
+</Layout>
