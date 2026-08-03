@@ -2,21 +2,21 @@
 import Layout from "../layouts/Layout.astro";
 import ProductCard from "../components/ProductCard.astro";
 
-const productosDestacados = [
+const serviciosDestacados = [
   {
-    img: "/img/producto-1.jpg",
-    title: "Producto 1",
-    description: "Descripción breve del producto y sus usos principales.",
+    img: "/img/planta/planta-1.jpeg",
+    title: "Inyección de plásticos",
+    description: "Producción de piezas plásticas de alta calidad para industria, hogar y promocional.",
   },
   {
-    img: "/img/producto-2.jpg",
-    title: "Producto 2",
-    description: "Descripción breve del producto y sus usos principales.",
+    img: "/img/planta/molde-2.jpeg",
+    title: "Diseño de moldes",
+    description: "Diseño y fabricación de moldes para inyección con precisión y tecnología avanzada.",
   },
   {
-    img: "/img/producto-3.jpg",
-    title: "Producto 3",
-    description: "Descripción breve del producto y sus usos principales.",
+    img: "/img/planta/planta-4.jpeg",
+    title: "Soluciones a medida",
+    description: "Acompañamos cada proyecto con procesos eficientes y un equipo calificado.",
   },
 ];
 ---
@@ -57,10 +57,10 @@ const productosDestacados = [
     </p>
     <a
       data-anim="hero-btn"
-      href="/productos"
+      href="/inyeccion-productos-plastico"
       class="inline-block bg-primario-claro hover:bg-primario-oscuro transition-colors px-8 py-4 rounded-lg font-semibold"
     >
-      Ver Productos
+      Ver Inyección
     </a>
   </section>
 
@@ -92,8 +92,8 @@ const productosDestacados = [
         Conoce cómo trabajamos y la tecnología detrás de cada producto.
       </p>
       <div data-anim="reveal" class="rounded-xl overflow-hidden shadow-2xl">
-        <video controls poster="/img/poster-video.jpg" class="w-full">
-          <source src="/video/proceso-marceplast.mp4" type="video/mp4" />
+        <video controls poster="/img/planta/planta-1.jpeg" class="w-full" preload="metadata">
+          <source src="/video/proceso.mp4" type="video/mp4" />
           Tu navegador no soporta el elemento de video.
         </video>
       </div>
@@ -107,20 +107,20 @@ const productosDestacados = [
         class="text-3xl font-bold text-primario text-center mb-3"
         data-anim="reveal"
       >
-        Productos Destacados
+        Servicios
       </h2>
       <p
         class="text-slate-500 text-center max-w-xl mx-auto mb-12"
         data-anim="reveal"
       >
-        Una muestra de lo que fabricamos para distintas industrias.
+        Soluciones integrales en moldes e inyección de plásticos.
       </p>
       <div
         data-anim="stagger-group"
         class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
       >
         {
-          productosDestacados.map((p) => (
+          serviciosDestacados.map((p) => (
             <ProductCard
               img={p.img}
               title={p.title}

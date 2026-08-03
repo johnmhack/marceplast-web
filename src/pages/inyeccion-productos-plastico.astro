@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Inyección de Productos Plásticos"
+  description="Producción de productos plásticos por inyección para los sectores promocional, industrial y del hogar."
+>
+
+  <section class="relative overflow-hidden bg-hero-gradient text-white py-28 px-5 text-center">
+    <div data-anim="hero-bg" class="absolute inset-0 bg-hero-gradient opacity-90 -z-10"></div>
+    <h1 data-anim="hero-title" class="text-4xl font-bold mb-4">Inyección de Productos Plásticos</h1>
+    <p data-anim="hero-text" class="text-lg opacity-95 max-w-2xl mx-auto">
+      Fabricamos piezas plásticas de alta calidad con tecnología de última generación
+      y procesos eficientes adaptados a cada cliente.
+    </p>
+  </section>
+
+  <section class="py-24 px-5" data-anim="section-pin">
+    <div class="max-w-3xl mx-auto text-center" data-anim="reveal">
+      <h2 class="text-3xl font-bold text-primario mb-4">Producción a medida</h2>
+      <p class="text-slate-500">
+        Desarrollamos y producimos productos plásticos para los sectores promocional,
+        industrial y del hogar. Nuestro equipo y maquinaria nos permiten entregar
+        soluciones confiables, con precisión y cumplimiento en cada proyecto.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24 px-5 bg-fondo-alterno" data-anim="section-pin">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primario text-center mb-3" data-anim="reveal">
+        Nuestra planta
+      </h2>
+      <p class="text-slate-500 text-center max-w-xl mx-auto mb-12" data-anim="reveal">
+        Maquinaria de inyección y procesos preparados para producción en serie.
+      </p>
+      <div data-anim="stagger-group" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl overflow-hidden h-64">
+          <img src="/img/planta/planta-1.jpeg" alt="Máquina de inyección" class="w-full h-full object-cover" />
+        </div>
+        <div class="rounded-xl overflow-hidden h-64">
+          <img src="/img/planta/planta-2.jpeg" alt="Panel de control de inyección" class="w-full h-full object-cover" />
+        </div>
+        <div class="rounded-xl overflow-hidden h-64">
+          <img src="/img/planta/inyeccion-1.jpeg" alt="Molde en máquina de inyección" class="w-full h-full object-cover" />
+        </div>
+        <div class="rounded-xl overflow-hidden h-64 sm:col-span-2 lg:col-span-3">
+          <img src="/img/planta/planta-4.jpeg" alt="Vista general de la planta" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-5 text-center" data-anim="section-pin">
+    <div class="max-w-2xl mx-auto" data-anim="reveal">
+      <h2 class="text-3xl font-bold text-primario mb-4">¿Tienes un producto en mente?</h2>
+      <p class="text-slate-500 mb-8">
+        Cuéntanos tu necesidad y te acompañamos desde el desarrollo hasta la producción.
+      </p>
+      <a href="/contactanos" class="inline-block bg-primario hover:bg-primario-oscuro transition-colors text-white px-8 py-4 rounded-lg font-semibold">
+        Contáctanos
+      </a>
+    </div>
+  </section>
+
+  <script>
+    import { initAnimations } from '../scripts/animations.js';
+    initAnimations();
+  </script>
+</Layout>

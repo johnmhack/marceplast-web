@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Diseño de Moldes de Inyección"
+  description="Diseño y fabricación de moldes para inyección de plástico con precisión y tecnología de última generación."
+>
+
+  <section class="relative overflow-hidden bg-hero-gradient text-white py-28 px-5 text-center">
+    <div data-anim="hero-bg" class="absolute inset-0 bg-hero-gradient opacity-90 -z-10"></div>
+    <h1 data-anim="hero-title" class="text-4xl font-bold mb-4">Diseño de Moldes de Inyección</h1>
+    <p data-anim="hero-text" class="text-lg opacity-95 max-w-2xl mx-auto">
+      Diseñamos y fabricamos moldes con precisión, innovación y estándares de excelencia
+      para potenciar tu producción.
+    </p>
+  </section>
+
+  <section class="py-24 px-5" data-anim="section-pin">
+    <div class="max-w-3xl mx-auto text-center" data-anim="reveal">
+      <h2 class="text-3xl font-bold text-primario mb-4">Moldes a la medida</h2>
+      <p class="text-slate-500">
+        Especializados en el diseño y fabricación de moldes para inyección. Trabajamos
+        con procesos de mecanizado de alta precisión para desarrollar herramientas
+        confiables, eficientes y adaptadas a las necesidades de cada cliente.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24 px-5 bg-fondo-alterno" data-anim="section-pin">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primario text-center mb-3" data-anim="reveal">
+        Precisión en cada detalle
+      </h2>
+      <p class="text-slate-500 text-center max-w-xl mx-auto mb-12" data-anim="reveal">
+        Fabricación y mecanizado de componentes para moldes de inyección.
+      </p>
+      <div data-anim="stagger-group" class="grid sm:grid-cols-3 gap-6">
+        <div class="rounded-xl overflow-hidden h-64">
+          <img src="/img/planta/molde-1.jpeg" alt="Mecanizado de componente" class="w-full h-full object-cover" />
+        </div>
+        <div class="rounded-xl overflow-hidden h-64">
+          <img src="/img/planta/molde-2.jpeg" alt="Mecanizado de molde" class="w-full h-full object-cover" />
+        </div>
+        <div class="rounded-xl overflow-hidden h-64">
+          <img src="/img/planta/molde-3.jpeg" alt="Fresado de precisión" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-5 text-center" data-anim="section-pin">
+    <div class="max-w-2xl mx-auto" data-anim="reveal">
+      <h2 class="text-3xl font-bold text-primario mb-4">¿Necesitas un molde nuevo?</h2>
+      <p class="text-slate-500 mb-8">
+        Hablemos de tu proyecto y diseñemos la herramienta ideal para tu producción.
+      </p>
+      <a href="/contactanos" class="inline-block bg-primario hover:bg-primario-oscuro transition-colors text-white px-8 py-4 rounded-lg font-semibold">
+        Contáctanos
+      </a>
+    </div>
+  </section>
+
+  <script>
+    import { initAnimations } from '../scripts/animations.js';
+    initAnimations();
+  </script>
+</Layout>
