@@ -30,17 +30,21 @@ const currentPath = Astro.url.pathname;
 
   <!-- HEADER -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-    <nav class="w-full flex items-center justify-between px-32 py-4">
-      <a href="/" class="flex items-center">
-  <img src="/img/logo-marceplast-horizontal.svg" alt="Marceplast" class="h-20 w-auto" />
-</a>
+    <nav class="max-w-7xl mx-auto flex items-center justify-between gap-4 px-5 sm:px-6 lg:px-8 py-3 md:py-4">
+      <a href="/" class="flex items-center min-w-0 shrink">
+        <img
+          src="/img/logo-marceplast-horizontal.svg"
+          alt="Marceplast"
+          class="h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[180px] sm:max-w-[220px] md:max-w-none"
+        />
+      </a>
 
-      <ul class="hidden md:flex gap-12 font-medium" id="nav-links-desktop">
+      <ul class="hidden lg:flex items-center gap-6 xl:gap-8 font-medium text-sm xl:text-base" id="nav-links-desktop">
         {navItems.map(item => (
           <li>
             <a
               href={item.href}
-              class={`transition-colors hover:text-primario ${currentPath === item.href ? 'text-primario font-semibold' : 'text-slate-700'}`}
+              class={`whitespace-nowrap transition-colors hover:text-primario ${currentPath === item.href ? 'text-primario font-semibold' : 'text-slate-700'}`}
             >
               {item.label}
             </a>
@@ -48,18 +52,31 @@ const currentPath = Astro.url.pathname;
         ))}
       </ul>
 
-      <button id="nav-toggle" aria-label="Abrir menú" class="md:hidden flex flex-col gap-1.5">
-        <span class="w-7 h-0.5 bg-primario rounded"></span>
-        <span class="w-7 h-0.5 bg-primario rounded"></span>
-        <span class="w-7 h-0.5 bg-primario rounded"></span>
+      <button
+        id="nav-toggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="nav-links-mobile"
+        class="lg:hidden flex flex-col justify-center gap-1.5 p-2 -mr-2"
+      >
+        <span class="w-6 h-0.5 bg-primario rounded transition-transform"></span>
+        <span class="w-6 h-0.5 bg-primario rounded transition-opacity"></span>
+        <span class="w-6 h-0.5 bg-primario rounded transition-transform"></span>
       </button>
     </nav>
 
-    <!-- Menú mobile -->
-    <ul id="nav-links-mobile" class="hidden md:hidden flex-col items-center gap-5 py-6 bg-white border-t border-slate-200">
+    <!-- Menú mobile / tablet -->
+    <ul
+      id="nav-links-mobile"
+      class="hidden lg:hidden flex-col items-stretch gap-1 px-5 py-4 bg-white border-t border-slate-200"
+    >
       {navItems.map(item => (
         <li>
-          <a href={item.href} class={`text-lg ${currentPath === item.href ? 'text-primario font-semibold' : 'text-slate-700'}`}>
+          <a
+            href={item.href}
+            class={`block py-3 text-base border-b border-slate-100 last:border-0 ${currentPath === item.href ? 'text-primario font-semibold' : 'text-slate-700'}`}
+          >
             {item.label}
           </a>
         </li>
@@ -72,9 +89,9 @@ const currentPath = Astro.url.pathname;
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-primario-oscuro text-white pt-14 pb-6 px-5">
-    <div class="max-w-6xl mx-auto grid sm:grid-cols-3 gap-10 mb-10">
-      <div>
+  <footer class="bg-primario-oscuro text-white pt-12 md:pt-14 pb-6 px-5">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-10">
+      <div class="sm:col-span-2 lg:col-span-1">
         <h4 class="text-primario-claro font-semibold mb-3">Marceplast</h4>
         <p class="opacity-90 text-sm leading-relaxed">
           Más de 15 años en diseño de moldes e inyección de plásticos para los sectores promocional, industrial y del hogar.
@@ -91,7 +108,7 @@ const currentPath = Astro.url.pathname;
       <div>
         <h4 class="text-primario-claro font-semibold mb-3">Contacto</h4>
         <ul class="space-y-2 text-sm opacity-90">
-          <li>Email: contacto@marceplastsas.com</li>
+          <li class="break-all">Email: contacto@marceplastsas.com</li>
           <li><a href="/contactanos" class="hover:underline">Formulario de contacto</a></li>
         </ul>
       </div>
@@ -104,9 +121,21 @@ const currentPath = Astro.url.pathname;
   <script>
     const toggle = document.getElementById('nav-toggle');
     const mobileMenu = document.getElementById('nav-links-mobile');
+
+    const setMenuOpen = (open) => {
+      mobileMenu?.classList.toggle('hidden', !open);
+      mobileMenu?.classList.toggle('flex', open);
+      toggle?.setAttribute('aria-expanded', String(open));
+      toggle?.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    };
+
     toggle?.addEventListener('click', () => {
-      mobileMenu?.classList.toggle('hidden');
-      mobileMenu?.classList.toggle('flex');
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      setMenuOpen(!isOpen);
+    });
+
+    mobileMenu?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMenuOpen(false));
     });
   </script>
 </body>

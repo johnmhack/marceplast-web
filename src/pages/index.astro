@@ -23,7 +23,7 @@ const serviciosDestacados = [
 
 <Layout title="Inicio">
   <!-- HERO con video de fondo -->
-  <section class="relative overflow-hidden text-white py-64 px-5 text-center">
+  <section class="relative overflow-hidden text-white min-h-[70vh] sm:min-h-[75vh] md:min-h-[85vh] flex items-center justify-center py-20 sm:py-28 md:py-36 px-5 text-center">
     <!-- Fallback imagen (reduced motion / carga) -->
     <div
       class="absolute inset-0 bg-cover bg-center bg-no-repeat -z-20"
@@ -48,27 +48,29 @@ const serviciosDestacados = [
     >
     </div>
 
-    <h1 data-anim="hero-title" class="text-4xl md:text-5xl font-bold mb-5">
-      Soluciones en Inyección de Plástico
-    </h1>
-    <p data-anim="hero-text" class="text-lg max-w-2xl mx-auto mb-8 opacity-95">
-      Marceplast transforma ideas en productos plásticos de alta calidad, con
-      tecnología de inyección y procesos eficientes para la industria.
-    </p>
-    <a
-      data-anim="hero-btn"
-      href="/inyeccion-productos-plastico"
-      class="inline-block bg-primario-claro hover:bg-primario-oscuro transition-colors px-8 py-4 rounded-lg font-semibold"
-    >
-      Ver Inyección
-    </a>
+    <div class="relative z-0 w-full max-w-3xl mx-auto">
+      <h1 data-anim="hero-title" class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5 leading-tight">
+        Soluciones en Inyección de Plástico
+      </h1>
+      <p data-anim="hero-text" class="text-base sm:text-lg max-w-2xl mx-auto mb-6 sm:mb-8 opacity-95 px-1">
+        Marceplast transforma ideas en productos plásticos de alta calidad, con
+        tecnología de inyección y procesos eficientes para la industria.
+      </p>
+      <a
+        data-anim="hero-btn"
+        href="/inyeccion-productos-plastico"
+        class="inline-block bg-primario-claro hover:bg-primario-oscuro transition-colors px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg font-semibold"
+      >
+        Ver Inyección
+      </a>
+    </div>
   </section>
 
   <!-- QUIÉNES SOMOS -->
-  <section data-anim="section-pin" class="py-24 px-5">
+  <section data-anim="section-pin" class="py-16 md:py-24 px-5">
     <div class="max-w-3xl mx-auto text-center" data-anim="reveal">
-      <h2 class="text-3xl font-bold text-primario mb-4">¿Quiénes Somos?</h2>
-      <p class="text-slate-500 mb-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primario mb-4">¿Quiénes Somos?</h2>
+      <p class="text-slate-500 mb-8 text-base sm:text-lg">
         Con más de 15 años de experiencia, nos especializamos en moldes para inyección
         y productos plásticos de alta calidad para los sectores promocional,
         industrial y del hogar.
@@ -83,16 +85,16 @@ const serviciosDestacados = [
   </section>
 
   <!-- VIDEO con reveal -->
-  <section class="py-24 px-5 bg-fondo-alterno" data-anim="section-pin">
+  <section class="py-16 md:py-24 px-5 bg-fondo-alterno" data-anim="section-pin">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-primario mb-3" data-anim="reveal">
+      <h2 class="text-2xl sm:text-3xl font-bold text-primario mb-3" data-anim="reveal">
         Nuestro Proceso
       </h2>
-      <p class="text-slate-500 mb-10" data-anim="reveal">
+      <p class="text-slate-500 mb-8 md:mb-10" data-anim="reveal">
         Conoce cómo trabajamos y la tecnología detrás de cada producto.
       </p>
       <div data-anim="reveal" class="rounded-xl overflow-hidden shadow-2xl">
-        <video controls poster="/img/planta/planta-1.jpeg" class="w-full" preload="metadata">
+        <video controls poster="/img/planta/planta-1.jpeg" class="w-full h-auto" preload="metadata">
           <source src="/video/proceso.mp4" type="video/mp4" />
           Tu navegador no soporta el elemento de video.
         </video>
@@ -100,24 +102,24 @@ const serviciosDestacados = [
     </div>
   </section>
 
-  <!-- PRODUCTOS DESTACADOS con stagger -->
-  <section class="py-24 px-5">
+  <!-- SERVICIOS -->
+  <section class="py-16 md:py-24 px-5">
     <div class="max-w-6xl mx-auto">
       <h2
-        class="text-3xl font-bold text-primario text-center mb-3"
+        class="text-2xl sm:text-3xl font-bold text-primario text-center mb-3"
         data-anim="reveal"
       >
         Servicios
       </h2>
       <p
-        class="text-slate-500 text-center max-w-xl mx-auto mb-12"
+        class="text-slate-500 text-center max-w-xl mx-auto mb-10 md:mb-12"
         data-anim="reveal"
       >
         Soluciones integrales en moldes e inyección de plásticos.
       </p>
       <div
         data-anim="stagger-group"
-        class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
       >
         {
           serviciosDestacados.map((p) => (
