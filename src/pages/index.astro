@@ -7,16 +7,19 @@ const serviciosDestacados = [
     img: "/img/planta/planta-1.jpeg",
     title: "Inyección de plásticos",
     description: "Producción de piezas plásticas de alta calidad para industria, hogar y promocional.",
+    href: "/inyeccion-productos-plastico",
   },
   {
     img: "/img/planta/molde-2.jpeg",
     title: "Diseño de moldes",
     description: "Diseño y fabricación de moldes para inyección con precisión y tecnología avanzada.",
+    href: "/diseno-moldes-inyeccion",
   },
   {
     img: "/img/planta/planta-4.jpeg",
     title: "Soluciones a medida",
     description: "Acompañamos cada proyecto con procesos eficientes y un equipo calificado.",
+    href: "/quienes-somos",
   },
 ];
 ---
@@ -127,6 +130,7 @@ const serviciosDestacados = [
               img={p.img}
               title={p.title}
               description={p.description}
+              href={p.href}
             />
           ))
         }

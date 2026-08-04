@@ -3,11 +3,16 @@ export interface Props {
   img: string;
   title: string;
   description: string;
+  href?: string;
 }
-const { img, title, description } = Astro.props;
+const { img, title, description, href } = Astro.props;
+const Tag = href ? 'a' : 'div';
 ---
 
-<div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+<Tag
+  href={href}
+  class="block bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300"
+>
   <div class="overflow-hidden h-48">
     <img
       src={img}
@@ -19,4 +24,4 @@ const { img, title, description } = Astro.props;
     <h3 class="text-primario font-semibold text-lg mb-1">{title}</h3>
     <p class="text-slate-500 text-sm">{description}</p>
   </div>
-</div>
+</Tag>
