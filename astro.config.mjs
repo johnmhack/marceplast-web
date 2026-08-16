@@ -3,5 +3,5 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://marceplast.com', // cambia esto por tu dominio real
+  site: 'https://www.marceplastsas.com',
 });
