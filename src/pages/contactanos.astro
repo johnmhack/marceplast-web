@@ -2,98 +2,157 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Contacto">
+<Layout
+  title="Contacto"
+  description="Contáctanos en Marceplast SAS. Asesoría en moldes e inyección de plásticos."
+>
 
-  <section class="relative overflow-hidden bg-hero-gradient text-white py-20 sm:py-24 md:py-28 px-5 text-center">
-    <div data-anim="hero-bg" class="absolute inset-0 bg-hero-gradient opacity-90 -z-10"></div>
-    <h1 data-anim="hero-title" class="text-3xl sm:text-4xl font-bold mb-4">Contáctanos</h1>
-    <p data-anim="hero-text" class="text-base sm:text-lg opacity-95 max-w-2xl mx-auto">
-      ¿Tienes alguna pregunta o necesitas más información? Contáctanos y con gusto te brindaremos la asesoría que necesitas. Estamos listos para ayudarte.
-    </p>
-  </section>
-
-  <section class="py-16 md:py-24 px-5" data-anim="section-pin">
-    <div class="max-w-xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold text-primario text-center mb-3" data-anim="reveal">
-        Envíanos un Mensaje
-      </h2>
-      <p class="text-slate-500 text-center mb-10" data-anim="reveal">
-        Completa el formulario o escríbenos a
-        <a href="mailto:marceplas_01@hotmail.com" class="text-primario font-medium break-all">marceplas_01@hotmail.com</a>.
+  <!-- HERO -->
+  <section class="relative overflow-hidden text-white py-24 sm:py-28 md:py-32 px-5 text-center">
+    <img
+      src="/img/planta/planta-4.jpeg"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover scale-105 blur-[2px] -z-20"
+    />
+    <div class="absolute inset-0 bg-primario-oscuro/70 -z-10" data-anim="hero-bg"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <p data-anim="hero-text" class="text-primario-claro font-semibold tracking-widest uppercase text-sm sm:text-base mb-4">
+        Estamos listos para ayudarte
       </p>
-
-      <!--
-        IMPORTANTE PARA NETLIFY FORMS:
-        - data-netlify="true" activa la captura del formulario en el panel de Netlify.
-        - name="contacto" es el identificador del formulario.
-        - El input hidden "form-name" es requerido por Netlify.
-      -->
-      <form
-        data-anim="reveal"
-        class="flex flex-col gap-5"
-        name="contacto"
-        method="POST"
-        data-netlify="true"
-      >
-        <input type="hidden" name="form-name" value="contacto" />
-
-        <input
-          type="text"
-          name="nombre"
-          placeholder="Nombre completo"
-          required
-          class="px-4 py-3.5 border border-slate-200 rounded-lg focus:outline-none focus:border-primario"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Correo electrónico"
-          required
-          class="px-4 py-3.5 border border-slate-200 rounded-lg focus:outline-none focus:border-primario"
-        />
-        <input
-          type="tel"
-          name="telefono"
-          placeholder="Teléfono (opcional)"
-          class="px-4 py-3.5 border border-slate-200 rounded-lg focus:outline-none focus:border-primario"
-        />
-        <textarea
-          name="mensaje"
-          rows="5"
-          placeholder="Cuéntanos sobre tu proyecto..."
-          required
-          class="px-4 py-3.5 border border-slate-200 rounded-lg focus:outline-none focus:border-primario"
-        ></textarea>
-
-        <button
-          type="submit"
-          class="bg-primario hover:bg-primario-oscuro transition-colors text-white px-8 py-4 rounded-lg font-semibold"
-        >
-          Enviar Mensaje
-        </button>
-      </form>
+      <h1 data-anim="hero-title" class="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 leading-tight">
+        Contáctanos
+      </h1>
+      <p data-anim="hero-text" class="text-lg sm:text-xl opacity-95 max-w-2xl mx-auto">
+        ¿Tienes alguna pregunta o necesitas más información? Contáctanos y con gusto te brindaremos la asesoría que necesitas.
+      </p>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 px-5 bg-fondo-alterno" data-anim="section-pin">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold text-primario text-center mb-8 md:mb-12" data-anim="reveal">
-        Información de Contacto
-      </h2>
-      <div data-anim="stagger-group" class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
-        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm text-center">
-          <h3 class="text-primario font-semibold mb-2">Email</h3>
-          <p class="text-slate-500 text-sm break-all">
-            <a href="mailto:marceplas_01@hotmail.com" class="hover:text-primario">marceplas_01@hotmail.com</a>
+  <!-- FORMULARIO + INFO -->
+  <section data-anim="section-pin" class="bg-white py-14 md:py-20">
+    <div class="px-4 sm:px-5 lg:px-6 xl:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-20 items-start">
+        <!-- Info -->
+        <div data-anim="reveal">
+          <p class="text-primario font-semibold tracking-widest uppercase text-sm sm:text-base mb-3">
+            Hablemos
           </p>
+          <h2 class="text-4xl sm:text-5xl font-bold text-primario-oscuro mb-6 leading-tight">
+            Envíanos un mensaje
+          </h2>
+          <p class="text-slate-600 text-lg sm:text-xl leading-relaxed mb-8 max-w-xl">
+            Completa el formulario o escríbenos directamente. Te responderemos a la brevedad.
+          </p>
+
+          <div class="space-y-6">
+            <div class="border-l-4 border-primario pl-5">
+              <p class="text-sm uppercase tracking-wide text-slate-500 mb-1">Email</p>
+              <a
+                href="mailto:marceplas_01@hotmail.com"
+                class="text-primario-oscuro text-lg sm:text-xl font-semibold break-all hover:text-primario transition-colors"
+              >
+                marceplas_01@hotmail.com
+              </a>
+            </div>
+            <div class="border-l-4 border-primario pl-5">
+              <p class="text-sm uppercase tracking-wide text-slate-500 mb-1">Web</p>
+              <a
+                href="https://www.marceplastsas.com"
+                class="text-primario-oscuro text-lg sm:text-xl font-semibold hover:text-primario transition-colors"
+              >
+                www.marceplastsas.com
+              </a>
+            </div>
+            <div class="border-l-4 border-primario pl-5">
+              <p class="text-sm uppercase tracking-wide text-slate-500 mb-1">Servicios</p>
+              <p class="text-primario-oscuro text-lg sm:text-xl font-semibold">
+                Moldes e inyección a medida
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-3">
+            <a
+              href="/inyeccion-productos-plastico"
+              class="inline-flex items-center justify-center gap-2 border-2 border-primario text-primario hover:bg-primario hover:text-white transition-colors px-5 py-3 rounded-lg font-semibold"
+            >
+              Inyección
+            </a>
+            <a
+              href="/diseno-moldes-inyeccion"
+              class="inline-flex items-center justify-center gap-2 border-2 border-primario text-primario hover:bg-primario hover:text-white transition-colors px-5 py-3 rounded-lg font-semibold"
+            >
+              Moldes
+            </a>
+          </div>
         </div>
-        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm text-center">
-          <h3 class="text-primario font-semibold mb-2">Web</h3>
-          <p class="text-slate-500 text-sm">www.marceplastsas.com</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm text-center">
-          <h3 class="text-primario font-semibold mb-2">Proyectos</h3>
-          <p class="text-slate-500 text-sm">Moldes e inyección a medida</p>
+
+        <!-- Form -->
+        <div class="rounded-2xl bg-fondo-alterno p-6 sm:p-8 lg:p-10 ring-1 ring-slate-200/80" data-anim="reveal">
+          <form
+            class="flex flex-col gap-5"
+            name="contacto"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="contacto" />
+            <p class="hidden">
+              <label>No llenar: <input name="bot-field" /></label>
+            </p>
+
+            <div>
+              <label for="nombre" class="block text-sm font-medium text-slate-700 mb-1.5">Nombre completo</label>
+              <input
+                id="nombre"
+                type="text"
+                name="nombre"
+                placeholder="Tu nombre"
+                required
+                class="w-full px-4 py-3.5 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-primario focus:ring-2 focus:ring-primario/20"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-700 mb-1.5">Correo electrónico</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="tu@correo.com"
+                required
+                class="w-full px-4 py-3.5 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-primario focus:ring-2 focus:ring-primario/20"
+              />
+            </div>
+            <div>
+              <label for="telefono" class="block text-sm font-medium text-slate-700 mb-1.5">Teléfono <span class="text-slate-400">(opcional)</span></label>
+              <input
+                id="telefono"
+                type="tel"
+                name="telefono"
+                placeholder="Tu teléfono"
+                class="w-full px-4 py-3.5 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-primario focus:ring-2 focus:ring-primario/20"
+              />
+            </div>
+            <div>
+              <label for="mensaje" class="block text-sm font-medium text-slate-700 mb-1.5">Mensaje</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                placeholder="Cuéntanos sobre tu proyecto..."
+                required
+                class="w-full px-4 py-3.5 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-primario focus:ring-2 focus:ring-primario/20 resize-y"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="bg-primario hover:bg-primario-oscuro transition-colors text-white px-8 py-4 rounded-lg font-semibold text-lg"
+            >
+              Enviar mensaje
+            </button>
+          </form>
         </div>
       </div>
     </div>
