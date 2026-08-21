@@ -11,10 +11,11 @@ const navItems = [
   { href: '/', label: 'Inicio' },
   { href: '/quienes-somos', label: 'Quiénes Somos' },
   { href: '/inyeccion-productos-plastico', label: 'Inyección' },
-  { href: '/diseno-moldes-inyeccion', label: 'Moldes de Inyección' },
-  { href: '/contactanos', label: 'Contacto' },
+  { href: '/diseno-moldes-inyeccion', label: 'Moldes' },
 ];
+const contactHref = '/contactanos';
 const currentPath = Astro.url.pathname;
+const isContact = currentPath === contactHref;
 ---
 
 <!DOCTYPE html>
@@ -29,28 +30,57 @@ const currentPath = Astro.url.pathname;
 <body class="font-sans text-slate-800 bg-fondo">
 
   <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-    <nav class="max-w-7xl mx-auto flex items-center justify-between gap-4 px-5 sm:px-6 lg:px-8 py-3 md:py-4">
-      <a href="/" class="flex items-center min-w-0 shrink">
+  <header
+    id="site-header"
+    class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-md transition-shadow duration-300"
+  >
+    <div class="h-0.5 w-full bg-gradient-to-r from-primario-oscuro via-primario to-acento"></div>
+    <nav class="w-full flex items-center justify-between gap-4 px-4 sm:px-5 lg:px-6 xl:px-8 py-3 md:py-3.5">
+      <a href="/" class="flex items-center min-w-0 shrink group">
         <img
           src="/img/logo-marceplast-horizontal.svg"
           alt="Marceplast"
-          class="h-10 sm:h-12 md:h-14 lg:h-16 w-auto max-w-[180px] sm:max-w-[220px] md:max-w-none"
+          class="h-10 sm:h-12 md:h-14 w-auto max-w-[180px] sm:max-w-[220px] md:max-w-none transition-opacity group-hover:opacity-90"
         />
       </a>
 
-      <ul class="hidden lg:flex items-center gap-6 xl:gap-8 font-medium text-sm xl:text-base" id="nav-links-desktop">
-        {navItems.map(item => (
-          <li>
-            <a
-              href={item.href}
-              class={`whitespace-nowrap transition-colors hover:text-primario ${currentPath === item.href ? 'text-primario font-semibold' : 'text-slate-700'}`}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div class="hidden lg:flex items-center gap-1 xl:gap-2">
+        <ul class="flex items-center gap-0.5" id="nav-links-desktop">
+          {navItems.map(item => {
+            const active = currentPath === item.href;
+            return (
+              <li>
+                <a
+                  href={item.href}
+                  class={`relative inline-flex items-center px-3 xl:px-4 py-2 text-base xl:text-lg font-medium tracking-wide whitespace-nowrap transition-colors ${
+                    active
+                      ? 'text-primario'
+                      : 'text-slate-600 hover:text-primario'
+                  }`}
+                >
+                  {item.label}
+                  <span
+                    class={`absolute left-3 right-3 xl:left-4 xl:right-4 -bottom-0.5 h-0.5 rounded-full bg-primario transition-opacity ${
+                      active ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    aria-hidden="true"
+                  ></span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+        <a
+          href={contactHref}
+          class={`ml-3 xl:ml-4 inline-flex items-center rounded-lg px-5 py-2.5 text-base font-semibold transition-colors ${
+            isContact
+              ? 'bg-primario-oscuro text-white'
+              : 'bg-primario text-white hover:bg-primario-oscuro'
+          }`}
+        >
+          Contáctanos
+        </a>
+      </div>
 
       <button
         id="nav-toggle"
@@ -58,30 +88,49 @@ const currentPath = Astro.url.pathname;
         aria-label="Abrir menú"
         aria-expanded="false"
         aria-controls="nav-links-mobile"
-        class="lg:hidden flex flex-col justify-center gap-1.5 p-2 -mr-2"
+        class="lg:hidden relative flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-primario"
       >
-        <span class="w-6 h-0.5 bg-primario rounded transition-transform"></span>
-        <span class="w-6 h-0.5 bg-primario rounded transition-opacity"></span>
-        <span class="w-6 h-0.5 bg-primario rounded transition-transform"></span>
+        <span id="nav-icon-open" class="flex flex-col gap-1.5">
+          <span class="block h-0.5 w-5 rounded bg-primario"></span>
+          <span class="block h-0.5 w-5 rounded bg-primario"></span>
+          <span class="block h-0.5 w-5 rounded bg-primario"></span>
+        </span>
+        <span id="nav-icon-close" class="hidden text-2xl leading-none font-light">&times;</span>
       </button>
     </nav>
 
     <!-- Menú mobile / tablet -->
-    <ul
+    <div
       id="nav-links-mobile"
-      class="hidden lg:hidden flex-col items-stretch gap-1 px-5 py-4 bg-white border-t border-slate-200"
+      class="hidden lg:hidden border-t border-slate-200 bg-white shadow-lg"
     >
-      {navItems.map(item => (
-        <li>
-          <a
-            href={item.href}
-            class={`block py-3 text-base border-b border-slate-100 last:border-0 ${currentPath === item.href ? 'text-primario font-semibold' : 'text-slate-700'}`}
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
-    </ul>
+      <ul class="flex flex-col px-5 py-3">
+        {navItems.map(item => {
+          const active = currentPath === item.href;
+          return (
+            <li>
+              <a
+                href={item.href}
+                class={`flex items-center justify-between py-3.5 text-lg border-b border-slate-100 ${
+                  active ? 'text-primario font-semibold' : 'text-slate-700'
+                }`}
+              >
+                {item.label}
+                {active && <span class="h-1.5 w-1.5 rounded-full bg-primario" aria-hidden="true"></span>}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+      <div class="px-5 pb-5 pt-2">
+        <a
+          href={contactHref}
+          class="block w-full text-center rounded-lg bg-primario hover:bg-primario-oscuro text-white text-lg font-semibold py-3.5 transition-colors"
+        >
+          Contáctanos
+        </a>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -103,6 +152,7 @@ const currentPath = Astro.url.pathname;
           {navItems.map(item => (
             <li><a href={item.href} class="hover:opacity-100 hover:underline">{item.label}</a></li>
           ))}
+          <li><a href={contactHref} class="hover:opacity-100 hover:underline">Contacto</a></li>
         </ul>
       </div>
       <div>
@@ -121,14 +171,18 @@ const currentPath = Astro.url.pathname;
   </footer>
 
   <script>
+    const header = document.getElementById('site-header');
     const toggle = document.getElementById('nav-toggle');
     const mobileMenu = document.getElementById('nav-links-mobile');
+    const iconOpen = document.getElementById('nav-icon-open');
+    const iconClose = document.getElementById('nav-icon-close');
 
     const setMenuOpen = (open) => {
       mobileMenu?.classList.toggle('hidden', !open);
-      mobileMenu?.classList.toggle('flex', open);
       toggle?.setAttribute('aria-expanded', String(open));
       toggle?.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      iconOpen?.classList.toggle('hidden', open);
+      iconClose?.classList.toggle('hidden', !open);
     };
 
     toggle?.addEventListener('click', () => {
@@ -139,6 +193,17 @@ const currentPath = Astro.url.pathname;
     mobileMenu?.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => setMenuOpen(false));
     });
+
+    const onScroll = () => {
+      if (!header) return;
+      if (window.scrollY > 8) {
+        header.classList.add('shadow-sm');
+      } else {
+        header.classList.remove('shadow-sm');
+      }
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
   </script>
 </body>
 </html>
