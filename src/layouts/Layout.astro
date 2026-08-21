@@ -138,35 +138,68 @@ const isContact = currentPath === contactHref;
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-primario-oscuro text-white pt-12 md:pt-14 pb-6 px-5">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-10">
-      <div class="sm:col-span-2 lg:col-span-1">
-        <h4 class="text-primario-claro font-semibold mb-3">Marceplast</h4>
-        <p class="opacity-90 text-sm leading-relaxed">
-          Más de 15 años en diseño de moldes e inyección de plásticos para los sectores promocional, industrial y del hogar.
-        </p>
+  <footer class="bg-primario-oscuro text-white">
+    <div class="h-0.5 w-full bg-gradient-to-r from-primario via-acento to-primario-claro"></div>
+
+    <div class="px-4 sm:px-5 lg:px-6 xl:px-8 pt-12 md:pt-16 pb-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
+        <div class="md:col-span-2 lg:col-span-2 max-w-md">
+          <a href="/" class="inline-flex items-center gap-3 mb-5 rounded-xl bg-white px-4 py-3">
+            <img
+              src="/img/logo-marceplast-horizontal.svg"
+              alt="Marceplast"
+              class="h-10 sm:h-12 w-auto"
+            />
+          </a>
+          <p class="text-white/80 text-base leading-relaxed mb-6">
+            Más de 15 años en diseño de moldes e inyección de plásticos para los sectores promocional, industrial y del hogar.
+          </p>
+          <a
+            href={contactHref}
+            class="inline-flex items-center gap-2 rounded-lg bg-primario hover:bg-primario-claro transition-colors text-white font-semibold px-5 py-3 text-sm"
+          >
+            Contáctanos
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Enlaces</h4>
+          <ul class="space-y-3 text-base text-white/75">
+            {navItems.map(item => (
+              <li>
+                <a href={item.href} class="hover:text-white transition-colors">{item.label}</a>
+              </li>
+            ))}
+            <li>
+              <a href={contactHref} class="hover:text-white transition-colors">Contacto</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Contacto</h4>
+          <ul class="space-y-3 text-base text-white/75">
+            <li>
+              <span class="block text-white/50 text-sm mb-1">Email</span>
+              <a href="mailto:marceplas_01@hotmail.com" class="break-all hover:text-white transition-colors">
+                marceplas_01@hotmail.com
+              </a>
+            </li>
+            <li>
+              <span class="block text-white/50 text-sm mb-1">Web</span>
+              <a href="https://www.marceplastsas.com" class="hover:text-white transition-colors">
+                www.marceplastsas.com
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4 class="text-primario-claro font-semibold mb-3">Enlaces</h4>
-        <ul class="space-y-2 text-sm opacity-90">
-          {navItems.map(item => (
-            <li><a href={item.href} class="hover:opacity-100 hover:underline">{item.label}</a></li>
-          ))}
-          <li><a href={contactHref} class="hover:opacity-100 hover:underline">Contacto</a></li>
-        </ul>
+
+      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-white/55">
+        <p>&copy; 2026 Marceplast SAS. Todos los derechos reservados.</p>
+        <p>Moldes e inyección de plásticos</p>
       </div>
-      <div>
-        <h4 class="text-primario-claro font-semibold mb-3">Contacto</h4>
-        <ul class="space-y-2 text-sm opacity-90">
-          <li class="break-all">
-            Email: <a href="mailto:marceplas_01@hotmail.com" class="hover:underline">marceplas_01@hotmail.com</a>
-          </li>
-          <li><a href="/contactanos" class="hover:underline">Formulario de contacto</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="max-w-6xl mx-auto border-t border-white/15 pt-5 text-center text-sm opacity-80">
-      &copy; 2026 Marceplast SAS. Todos los derechos reservados.
     </div>
   </footer>
 
