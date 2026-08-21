@@ -2,49 +2,115 @@
 import Layout from '../layouts/Layout.astro';
 
 const instalaciones = [
+  { src: '/img/planta/quienes-home.jpg', alt: 'Línea de producción Marceplast' },
   { src: '/img/planta/planta-1.jpeg', alt: 'Máquina de inyección' },
+  { src: '/img/planta/planta-2.jpeg', alt: 'Panel de control' },
   { src: '/img/planta/planta-3.jpeg', alt: 'Maquinaria de inyección' },
-  { src: '/img/planta/planta-4.jpeg', alt: 'Planta de producción' },
+  { src: '/img/planta/planta-4.jpeg', alt: 'Vista general de planta' },
+  { src: '/img/planta/inyeccion-1.jpeg', alt: 'Molde en máquina de inyección' },
 ];
 ---
 
-<Layout title="Quiénes Somos">
+<Layout
+  title="Quiénes Somos"
+  description="Más de 15 años en diseño de moldes e inyección de plásticos. Conoce a Marceplast SAS."
+>
 
-  <section class="relative overflow-hidden bg-hero-gradient text-white py-20 sm:py-24 md:py-28 px-5 text-center">
-    <div data-anim="hero-bg" class="absolute inset-0 bg-hero-gradient opacity-90 -z-10"></div>
-    <h1 data-anim="hero-title" class="text-3xl sm:text-4xl font-bold mb-4">Quiénes Somos</h1>
-    <p data-anim="hero-text" class="text-base sm:text-lg opacity-95 max-w-xl mx-auto">
-      Más de 15 años de experiencia en moldes e inyección de plásticos.
-    </p>
-  </section>
-
-  <section class="py-16 md:py-24 px-5" data-anim="section-pin">
-    <div class="max-w-3xl mx-auto text-center" data-anim="reveal">
-      <p class="text-slate-500 mb-4">
-        Con más de 15 años de experiencia, somos una empresa especializada en el
-        diseño y fabricación de moldes para inyección, así como en la producción de
-        productos plásticos de alta calidad para los sectores promocional, industrial y del
-        hogar. Contamos con tecnología de última generación y un equipo altamente
-        calificado que nos permite desarrollar soluciones innovadoras, eficientes y
-        confiables, adaptadas a las necesidades de cada cliente.
+  <!-- HERO -->
+  <section class="relative overflow-hidden text-white py-24 sm:py-28 md:py-32 px-5 text-center">
+    <img
+      src="/img/planta/quienes-home.jpg"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover scale-105 blur-[2px] -z-20"
+    />
+    <div class="absolute inset-0 bg-primario-oscuro/70 -z-10" data-anim="hero-bg"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <p data-anim="hero-text" class="text-primario-claro font-semibold tracking-widest uppercase text-sm sm:text-base mb-4">
+        Marceplast SAS
       </p>
-      <p class="text-slate-500">
-        Nuestro compromiso con la calidad, la innovación, la precisión y el cumplimiento
-        nos ha consolidado como un aliado estratégico, ofreciendo productos y procesos
-        que cumplen con los más altos estándares de excelencia.
+      <h1 data-anim="hero-title" class="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 leading-tight">
+        Quiénes Somos
+      </h1>
+      <p data-anim="hero-text" class="text-lg sm:text-xl opacity-95 max-w-2xl mx-auto">
+        Más de 15 años de experiencia en moldes e inyección de plásticos.
       </p>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 px-5 bg-fondo-alterno" data-anim="section-pin">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold text-primario text-center mb-8 md:mb-12" data-anim="reveal">
-        Misión, Visión y Valores
-      </h2>
-      <div data-anim="stagger-group" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
-          <h3 class="text-primario font-semibold mb-2">Misión</h3>
-          <p class="text-slate-500 text-sm">
+  <!-- HISTORIA / PRESENTACIÓN -->
+  <section data-anim="section-pin" class="bg-white py-14 md:py-20">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 xl:gap-28 items-center px-4 sm:px-5 lg:px-6 xl:px-8">
+      <div class="relative overflow-hidden rounded-2xl aspect-[4/3] sm:aspect-[16/11] lg:aspect-auto lg:min-h-[30rem] xl:min-h-[34rem]" data-anim="reveal">
+        <img
+          src="/img/planta/planta-1.jpeg"
+          alt="Planta de producción Marceplast"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div class="absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-t from-white/90 via-white/40 to-transparent pointer-events-none" aria-hidden="true"></div>
+        <p class="absolute bottom-5 left-5 sm:bottom-8 sm:left-8 text-slate-900 text-4xl sm:text-5xl font-bold tracking-tight">
+          +15<span class="block text-base sm:text-lg font-medium tracking-normal mt-1">años de experiencia</span>
+        </p>
+      </div>
+
+      <div class="lg:pl-6 xl:pl-12" data-anim="reveal">
+        <p class="text-primario font-semibold tracking-widest uppercase text-sm sm:text-base mb-3">
+          Nuestra empresa
+        </p>
+        <h2 class="text-4xl sm:text-5xl font-bold text-primario-oscuro mb-6 leading-tight">
+          Aliado estratégico en plásticos
+        </h2>
+        <p class="text-slate-600 mb-5 text-lg sm:text-xl leading-relaxed">
+          Con más de 15 años de experiencia, somos una empresa especializada en el
+          diseño y fabricación de moldes para inyección, así como en la producción de
+          productos plásticos de alta calidad para los sectores promocional, industrial y del
+          hogar.
+        </p>
+        <p class="text-slate-600 text-lg sm:text-xl leading-relaxed">
+          Contamos con tecnología de última generación y un equipo altamente
+          calificado que nos permite desarrollar soluciones innovadoras, eficientes y
+          confiables, adaptadas a las necesidades de cada cliente.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPROMISO -->
+  <section data-anim="section-pin" class="bg-fondo-alterno py-14 md:py-16">
+    <div class="px-4 sm:px-5 lg:px-6 xl:px-8 max-w-4xl" data-anim="reveal">
+      <div class="border-l-4 border-primario pl-5 sm:pl-7">
+        <p class="text-slate-700 text-lg sm:text-xl leading-relaxed">
+          Nuestro compromiso con la calidad, la innovación, la precisión y el cumplimiento
+          nos ha consolidado como un aliado estratégico, ofreciendo productos y procesos
+          que cumplen con los más altos estándares de excelencia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISIÓN / VISIÓN / VALORES -->
+  <section data-anim="section-pin" class="bg-white py-14 md:py-20">
+    <div class="px-4 sm:px-5 lg:px-6 xl:px-8">
+      <div class="mb-10 md:mb-14 grid lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-16 items-end" data-anim="reveal">
+        <div>
+          <p class="text-primario font-semibold tracking-widest uppercase text-sm sm:text-base mb-3">
+            Nuestro norte
+          </p>
+          <h2 class="text-4xl sm:text-5xl xl:text-6xl font-bold text-primario-oscuro leading-tight">
+            Misión, Visión y Valores
+          </h2>
+        </div>
+        <div class="border-t-4 border-primario pt-4 lg:border-t-0 lg:border-l-4 lg:pt-0 lg:pl-6">
+          <p class="text-slate-600 text-lg sm:text-xl leading-relaxed">
+            Principios que guían cada proyecto y cada relación con nuestros clientes.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 mb-10" data-anim="stagger-group">
+        <article class="rounded-2xl bg-fondo-alterno p-7 sm:p-9 ring-1 ring-slate-200/80">
+          <h3 class="text-primario text-2xl sm:text-3xl font-bold mb-4">Misión</h3>
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
             Brindar soluciones integrales en el diseño y fabricación de moldes para inyección,
             así como en la producción de productos plásticos de alta calidad para los sectores
             promocional, industrial y del hogar. Nos enfocamos en satisfacer las necesidades
@@ -52,10 +118,11 @@ const instalaciones = [
             generación y un equipo comprometido con la calidad, la innovación y el
             cumplimiento.
           </p>
-        </div>
-        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
-          <h3 class="text-primario font-semibold mb-2">Visión</h3>
-          <p class="text-slate-500 text-sm">
+        </article>
+
+        <article class="rounded-2xl bg-fondo-alterno p-7 sm:p-9 ring-1 ring-slate-200/80">
+          <h3 class="text-primario text-2xl sm:text-3xl font-bold mb-4">Visión</h3>
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
             Ser una empresa líder y referente en la industria de la inyección de plásticos y
             fabricación de moldes, reconocida por la innovación, la excelencia en nuestros
             procesos y la confianza que generamos en nuestros clientes. Para el año 2030,
@@ -63,33 +130,42 @@ const instalaciones = [
             incorporando nuevas tecnologías y consolidándonos como un aliado estratégico
             para el desarrollo de soluciones plásticas de alto valor.
           </p>
-        </div>
-        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
-          <h3 class="text-primario font-semibold mb-2">Valores</h3>
-          <ul class="text-slate-500 text-sm list-disc list-inside space-y-2 text-left">
-            <li>Calidad</li>
-            <li>Innovación</li>
-            <li>Precisión</li>
-            <li>Cumplimiento</li>
-          </ul>
-        </div>
+        </article>
       </div>
+
+      <article class="rounded-2xl bg-primario-oscuro text-white p-7 sm:p-10" data-anim="reveal">
+        <h3 class="text-primario-claro text-2xl sm:text-3xl font-bold mb-6">Valores</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          {['Calidad', 'Innovación', 'Precisión', 'Cumplimiento'].map((valor) => (
+            <li class="border-l-2 border-primario-claro pl-4">
+              <span class="text-xl sm:text-2xl font-semibold">{valor}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 px-5" data-anim="section-pin">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold text-primario text-center mb-3" data-anim="reveal">
-        Nuestras Instalaciones
-      </h2>
-      <p class="text-slate-500 text-center mb-8 md:mb-12" data-anim="reveal">
-        Conoce un poco de nuestra planta y equipo de trabajo. Haz clic en una foto para ampliarla.
-      </p>
-      <div data-anim="stagger-group" class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8">
+  <!-- INSTALACIONES -->
+  <section data-anim="section-pin" class="bg-fondo-alterno py-14 md:py-20">
+    <div class="px-4 sm:px-5 lg:px-6 xl:px-8">
+      <div class="mb-10 md:mb-12 max-w-3xl" data-anim="reveal">
+        <p class="text-primario font-semibold tracking-widest uppercase text-sm sm:text-base mb-3">
+          Nuestra planta
+        </p>
+        <h2 class="text-4xl sm:text-5xl font-bold text-primario-oscuro mb-4 leading-tight">
+          Nuestras Instalaciones
+        </h2>
+        <p class="text-slate-600 text-lg sm:text-xl leading-relaxed">
+          Conoce un poco de nuestra planta y equipo de trabajo. Haz clic en una foto para ampliarla.
+        </p>
+      </div>
+
+      <div data-anim="stagger-group" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {instalaciones.map((foto) => (
           <button
             type="button"
-            class="lightbox-trigger group relative rounded-xl overflow-hidden h-52 sm:h-56 cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-primario"
+            class="lightbox-trigger group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-primario focus:ring-offset-2"
             data-src={foto.src}
             data-alt={foto.alt}
             aria-label={`Ampliar: ${foto.alt}`}
@@ -98,11 +174,31 @@ const instalaciones = [
               data-anim="parallax-img"
               src={foto.src}
               alt={foto.alt}
-              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
+            <span class="absolute inset-0 bg-primario-oscuro/0 group-hover:bg-primario-oscuro/20 transition-colors" aria-hidden="true"></span>
           </button>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-white py-14 md:py-20 px-4 sm:px-5 lg:px-6 xl:px-8 text-center" data-anim="section-pin">
+    <div class="max-w-2xl mx-auto" data-anim="reveal">
+      <h2 class="text-3xl sm:text-4xl font-bold text-primario-oscuro mb-4 leading-tight">
+        ¿Listo para tu próximo proyecto?
+      </h2>
+      <p class="text-slate-600 text-lg sm:text-xl mb-8 leading-relaxed">
+        Contáctanos y con gusto te brindaremos la asesoría que necesitas.
+      </p>
+      <a
+        href="/contactanos"
+        class="inline-flex items-center gap-2 bg-primario hover:bg-primario-oscuro transition-colors text-white px-8 py-4 rounded-lg font-semibold text-lg"
+      >
+        Contáctanos
+        <span aria-hidden="true">→</span>
+      </a>
     </div>
   </section>
 
